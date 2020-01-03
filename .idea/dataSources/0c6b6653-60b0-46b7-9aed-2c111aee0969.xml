@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="MySQL - hospital@localhost">
+<dataSource name="hospital@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.17">
     <root id="1">
-      <ServerVersion>5.5.28</ServerVersion>
+      <ServerVersion>5.5.59</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
       <DefaultCasing>lower/lower</DefaultCasing>
@@ -825,7 +825,7 @@
     <table id="215" parent="2" name="users"/>
     <column id="216" parent="204" name="id">
       <Position>1</Position>
-      <Comment>æ”¶è´¹é¡¹ç›®ç¼–å&#x8f;·</Comment>
+      <Comment>收费项目编号</Comment>
       <DataType>int(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
@@ -860,13 +860,13 @@
     </column>
     <column id="222" parent="205" name="rno">
       <Position>2</Position>
-      <Comment>ç—…äººå¤–é”®</Comment>
+      <Comment>病人外键</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="223" parent="205" name="cid">
       <Position>3</Position>
-      <Comment>æ”¶è´¹é¡¹ç›®è¡¨å¤–é”®</Comment>
+      <Comment>收费项目表外键</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -928,7 +928,7 @@
     </key>
     <column id="235" parent="207" name="did">
       <Position>1</Position>
-      <Comment>ä¸»é”®</Comment>
+      <Comment>主键</Comment>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
@@ -936,61 +936,61 @@
     </column>
     <column id="236" parent="207" name="name">
       <Position>2</Position>
-      <Comment>å§“å&#x90;&#x8d;</Comment>
+      <Comment>姓名</Comment>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="237" parent="207" name="card_no">
       <Position>3</Position>
-      <Comment>è¯&#x81;ä»¶å&#x8f;·</Comment>
+      <Comment>证件号</Comment>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="238" parent="207" name="phone">
       <Position>4</Position>
-      <Comment>æ‰‹æœº</Comment>
+      <Comment>手机</Comment>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="239" parent="207" name="sex">
       <Position>5</Position>
-      <Comment>æ€§åˆ«</Comment>
+      <Comment>性别</Comment>
       <DataType>tinyint(1)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="240" parent="207" name="age">
       <Position>6</Position>
-      <Comment>å¹´é¾„</Comment>
+      <Comment>年龄</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="241" parent="207" name="birthday">
       <Position>7</Position>
-      <Comment>å‡ºç”Ÿæ—¥æœŸ</Comment>
+      <Comment>出生日期</Comment>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="242" parent="207" name="email">
       <Position>8</Position>
-      <Comment>ç”µå­&#x90;é‚®ç®±</Comment>
+      <Comment>电子邮箱</Comment>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="243" parent="207" name="department">
       <Position>9</Position>
-      <Comment>ç§‘å®¤</Comment>
+      <Comment>科室</Comment>
       <DataType>tinyint(1)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="244" parent="207" name="education">
       <Position>10</Position>
-      <Comment>å­¦åŽ†</Comment>
+      <Comment>学历</Comment>
       <DataType>tinyint(1)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="245" parent="207" name="remark">
       <Position>11</Position>
-      <Comment>å¤‡æ³¨</Comment>
+      <Comment>备注</Comment>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1008,37 +1008,37 @@
     </column>
     <column id="248" parent="208" name="rno">
       <Position>2</Position>
-      <Comment>æŒ‚å&#x8f;·ä¿¡æ&#x81;¯å¤–é”®</Comment>
+      <Comment>挂号信息外键</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="249" parent="208" name="bed_no">
       <Position>3</Position>
-      <Comment>åºŠå&#x8f;·</Comment>
+      <Comment>床号</Comment>
       <DataType>varchar(40)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="250" parent="208" name="deposit">
       <Position>4</Position>
-      <Comment>æŠ¼é‡‘</Comment>
+      <Comment>押金</Comment>
       <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="251" parent="208" name="description">
       <Position>5</Position>
-      <Comment>ç—…æƒ…æ&#x8f;&#x8f;è¿°</Comment>
+      <Comment>病情描述</Comment>
       <DataType>varchar(500)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="252" parent="208" name="in_date">
       <Position>6</Position>
-      <Comment>å…¥é™¢æ—¶é—´</Comment>
+      <Comment>入院时间</Comment>
       <DataType>varchar(40)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="253" parent="208" name="protect">
       <Position>7</Position>
-      <Comment>æŠ¤ç&#x90;†</Comment>
+      <Comment>护理</Comment>
       <DataType>varchar(500)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1064,79 +1064,79 @@
     </column>
     <column id="258" parent="209" name="picture">
       <Position>2</Position>
-      <Comment>å›¾ç‰‡åœ°å&#x9d;€</Comment>
+      <Comment>图片地址</Comment>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="259" parent="209" name="in_price">
       <Position>3</Position>
-      <Comment>è¿›ä»·</Comment>
+      <Comment>进价</Comment>
       <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="260" parent="209" name="sal_price">
       <Position>4</Position>
-      <Comment>å”®ä»·</Comment>
+      <Comment>售价</Comment>
       <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="261" parent="209" name="name">
       <Position>5</Position>
-      <Comment>è&#x8d;¯å“&#x81;å&#x90;&#x8d;ç§°</Comment>
+      <Comment>药品名称</Comment>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="262" parent="209" name="type">
       <Position>6</Position>
-      <Comment>è&#x8d;¯å“&#x81;ç±»åž‹ 0å¤„æ–¹1ä¸­è&#x8d;¯2è¥¿è&#x8d;¯</Comment>
+      <Comment>药品类型 0处方1中药2西药</Comment>
       <DataType>tinyint(4)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="263" parent="209" name="descs">
       <Position>7</Position>
-      <Comment>ç®€å&#x8d;•æ&#x8f;&#x8f;è¿°</Comment>
+      <Comment>简单描述</Comment>
       <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="264" parent="209" name="quality_date">
       <Position>8</Position>
-      <Comment>ä¿&#x9d;è´¨æœŸ</Comment>
+      <Comment>保质期</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="265" parent="209" name="description">
       <Position>9</Position>
-      <Comment>è¯¦ç»†æ&#x8f;&#x8f;è¿°</Comment>
+      <Comment>详细描述</Comment>
       <DataType>varchar(500)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="266" parent="209" name="produce_firm">
       <Position>10</Position>
-      <Comment>ç”Ÿäº§åŽ‚å•†</Comment>
+      <Comment>生产厂商</Comment>
       <DataType>varchar(80)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="267" parent="209" name="readme">
       <Position>11</Position>
-      <Comment>æœ&#x8d;ç”¨è¯´æ˜Ž</Comment>
+      <Comment>服用说明</Comment>
       <DataType>varchar(300)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="268" parent="209" name="count_all">
       <Position>12</Position>
-      <Comment>æ€»çš„è¿›è´§é‡&#x8f;</Comment>
+      <Comment>总的进货量</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="269" parent="209" name="count_surplus">
       <Position>13</Position>
-      <Comment>å‰©ä½™é‡&#x8f;</Comment>
+      <Comment>剩余量</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="270" parent="209" name="remark">
       <Position>14</Position>
-      <Comment>å¤‡æ³¨</Comment>
+      <Comment>备注</Comment>
       <DataType>varchar(500)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1151,7 +1151,7 @@
     </key>
     <column id="273" parent="210" name="rno">
       <Position>1</Position>
-      <Comment>ç—…åŽ†å&#x8f;·</Comment>
+      <Comment>病历号</Comment>
       <DataType>int(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
@@ -1164,31 +1164,31 @@
     </column>
     <column id="275" parent="210" name="id_card">
       <Position>3</Position>
-      <Comment>èº«ä»½è¯&#x81;å&#x8f;·</Comment>
+      <Comment>身份证号</Comment>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="276" parent="210" name="si_number">
       <Position>4</Position>
-      <Comment>ç¤¾ä¿&#x9d;å&#x8f;·</Comment>
+      <Comment>社保号</Comment>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="277" parent="210" name="register_money">
       <Position>5</Position>
-      <Comment>æŒ‚å&#x8f;·è´¹ç”¨</Comment>
+      <Comment>挂号费用</Comment>
       <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="278" parent="210" name="phone">
       <Position>6</Position>
-      <Comment>è&#x81;”ç³»ç”µè¯&#x9d;</Comment>
+      <Comment>联系电话</Comment>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="279" parent="210" name="is_pay">
       <Position>7</Position>
-      <Comment>æ˜¯å&#x90;¦è‡ªè´¹</Comment>
+      <Comment>是否自费</Comment>
       <DataType>tinyint(4)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1209,19 +1209,19 @@
     </column>
     <column id="283" parent="210" name="consultation">
       <Position>11</Position>
-      <Comment>åˆ&#x9d;å¤&#x8d;è¯Š</Comment>
+      <Comment>初复诊</Comment>
       <DataType>tinyint(4)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="284" parent="210" name="department">
       <Position>12</Position>
-      <Comment>ç§‘å®¤</Comment>
+      <Comment>科室</Comment>
       <DataType>tinyint(4)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="285" parent="210" name="did">
       <Position>13</Position>
-      <Comment>åŒ»ç”Ÿå¤–é”®</Comment>
+      <Comment>医生外键</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1268,7 +1268,7 @@
     </column>
     <column id="294" parent="212" name="id">
       <Position>1</Position>
-      <Comment>ä¸»é”®</Comment>
+      <Comment>主键</Comment>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
@@ -1276,13 +1276,13 @@
     </column>
     <column id="295" parent="212" name="text">
       <Position>2</Position>
-      <Comment>èµ„æº&#x90;å&#x90;&#x8d;ç§°</Comment>
+      <Comment>资源名称</Comment>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="296" parent="212" name="href">
       <Position>3</Position>
-      <Comment>èµ„æº&#x90;è·¯å¾„</Comment>
+      <Comment>资源路径</Comment>
       <DataType>varchar(80)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1293,7 +1293,7 @@
     </key>
     <column id="298" parent="213" name="roleid">
       <Position>1</Position>
-      <Comment>ä¸»é”®</Comment>
+      <Comment>主键</Comment>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
@@ -1301,13 +1301,13 @@
     </column>
     <column id="299" parent="213" name="status">
       <Position>2</Position>
-      <Comment>çŠ¶æ€&#x81;</Comment>
+      <Comment>状态</Comment>
       <DataType>tinyint(1)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="300" parent="213" name="rolename">
       <Position>3</Position>
-      <Comment>è§’è‰²å&#x90;&#x8d;ç§°</Comment>
+      <Comment>角色名称</Comment>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1363,7 +1363,7 @@
     </column>
     <column id="311" parent="215" name="status">
       <Position>4</Position>
-      <Comment>çŠ¶æ€&#x81;</Comment>
+      <Comment>状态</Comment>
       <DataType>tinyint(1)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1379,7 +1379,7 @@
     </column>
     <column id="314" parent="215" name="modifytime">
       <Position>7</Position>
-      <Comment>ä¿®æ”¹æ—¶é—´</Comment>
+      <Comment>修改时间</Comment>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
