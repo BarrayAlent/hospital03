@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1b7c5fe-4082-4de2-9fc4-7a22e415a006" name="Default Changelist" comment="" />
+    <list default="true" id="b1b7c5fe-4082-4de2-9fc4-7a22e415a006" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -241,7 +243,7 @@
       <workItem from="1578018224521" duration="8566000" />
       <workItem from="1578028605979" duration="5773000" />
       <workItem from="1578045174912" duration="1103000" />
-      <workItem from="1578048558254" duration="568000" />
+      <workItem from="1578048558254" duration="1437000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交项目">
       <created>1578015504353</created>
@@ -292,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578049047862</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="1">
+      <created>1578049154179</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1578049154179</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,6 +329,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="361" y="74" key="#Notifications" timestamp="1578049337906">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="74" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1578049337906" />
     <state x="334" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578028143914">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -340,18 +353,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1578024064505" />
-    <state x="284" y="14" key="CommitChangelistDialog2" timestamp="1578049136320">
+    <state x="284" y="14" key="CommitChangelistDialog2" timestamp="1578049153243">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="284" y="14" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578049136320" />
+    <state x="284" y="14" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578049153243" />
     <state x="46" y="78" key="DiffContextDialog" timestamp="1578019108263">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="46" y="78" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1578019108263" />
-    <state x="641" y="146" key="FileChooserDialogImpl" timestamp="1578049028329">
+    <state x="641" y="146" key="FileChooserDialogImpl" timestamp="1578050130399">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="641" y="146" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1578049028329" />
+    <state x="641" y="146" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1578050130399" />
     <state x="623" y="303" width="273" height="207" key="Github.ShareDialog" timestamp="1578020536381">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -420,10 +433,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="191" y="24" width="1070" height="708" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1578046134200" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1578049091355">
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1578050106541">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1578049091355" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1578050106541" />
     <state x="461" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1578018225654">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
