@@ -1,16 +1,19 @@
 package com.ujiuye.controller;
 
-import com.ujiuye.service.Responsebean;
+
 import com.ujiuye.service.UserServeice;
+import com.ujiuye.util.Responsebean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
+
 @RestController
 @RequestMapping("/user/")
-public class Controller {
+public class UserController {
     @Autowired   //(@Autowired会自动找到自己的实现类)
-            UserServeice serveice;
+    UserServeice serveice;
 
     @RequestMapping("he")
     public String  hello(){
@@ -23,5 +26,12 @@ public class Controller {
 
         return  serveice.createCode();
     }
+
+    @RequestMapping("login")
+    public  Responsebean  login(String username, String password, HttpSession session){
+
+        return  serveice.login(username,password,session);
+    }
+
 
 }

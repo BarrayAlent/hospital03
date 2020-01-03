@@ -5,5 +5,8 @@
 <mapper namespace="com.ujiuye.dao.UserDao">
 
 
+    <select id="getUserByUserNameAndPsw" resultType="com.ujiuye.bean.Users">
+        select * from users where  username=#{0} and password=#{1}
+    </select>
 
 </mapper>

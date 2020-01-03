@@ -1,9 +1,12 @@
 package com.ujiuye.service;
 
-/**
- * @author Tch
- * @create 2020-01-03-11:08
- */
+import com.ujiuye.util.Responsebean;
+
+import javax.servlet.http.HttpSession;
+
 public interface UserServeice {
-    Responsebean createCode();
+
+     Responsebean createCode();
+
+    Responsebean login(String username, String password, HttpSession session);
 }

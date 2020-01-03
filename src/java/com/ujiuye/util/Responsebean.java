@@ -1,13 +1,17 @@
-package com.ujiuye.service;
+package com.ujiuye.util;
 
-/**
- * @author Tch
- * @create 2020-01-03-11:32
- */
 public class Responsebean {
     private String data;
     private boolean success;
+    private String code;
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public String getData() {
         return data;
@@ -24,5 +28,4 @@ public class Responsebean {
     public void setSuccess(boolean success) {
         this.success = success;
     }
-
 }

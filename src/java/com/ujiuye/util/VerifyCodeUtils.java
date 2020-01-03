@@ -10,15 +10,14 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.Random;
-/**
- * <p><b>VerifyCodeUtils Description:</b> (验证码生成)</p>
- * <b>DATE:</b> 2016年6月2日 下午3:53:34
- */
-public class VerifyCodeUtils{
 
+public class VerifyCodeUtils {
     //使用到Algerian字体，系统里没有的话需要安装字体，字体只显示大写，去掉了1,0,i,o几个容易混淆的字符
     public static final String VERIFY_CODES = "23456789ABCDEFGHJKLMNPQRSTUVWXYZ";
     private static Random random = new Random();
+
+
+
 
 
     /**
@@ -72,7 +71,7 @@ public class VerifyCodeUtils{
      * @return
      * @throws IOException
      */
-    public static String outputVerifyImage(int w, int h, OutputStream os, int verifySize) throws IOException{
+    public static String outputVerifyImage(int w, int h, OutputStream os, int verifySize) throws IOException {
         String verifyCode = generateVerifyCode(verifySize);
         outputImage(w, h, os, verifyCode);
         return verifyCode;
@@ -255,13 +254,12 @@ public class VerifyCodeUtils{
 
     }
     public static void main(String[] args) throws IOException{
-        File dir = new File("E:/verifies");
+        File dir = new File("D://upload");
         int w = 200, h = 80;
-        for(int i = 0; i < 50; i++){
-            String verifyCode = generateVerifyCode(4);
+            String verifyCode = generateVerifyCode(5);
             System.out.println(verifyCode);
             File file = new File(dir, verifyCode + ".jpg");
             outputImage(w, h, file, verifyCode);
-        }
     }
+
 }
