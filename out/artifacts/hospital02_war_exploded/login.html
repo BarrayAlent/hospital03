@@ -70,17 +70,51 @@
 			margin-left: 10px;
 		}
 		
-    </style>  
+    </style>
+    <script>
+        //获取验证码图片
+        function getnewCode() {
+            //ajax
+            $.ajax({
+                url:"user/code", //请求路径
+                dataType:"json",  //后台返回的数据格式
+                success:function (da) {
+                    //找到图片标签，改掉src后面图片路径
+                    // alert(da);
+
+                    $("#code_img").prop("src","/"+da.data);
+
+                }
+
+            })
+        }
+
+        //等待网页加载完成后立即加载验证码
+        $(function () {
+
+            getnewCode();
+
+            //给图片点击事件
+            $("#code_img").click(function () {
+                getnewCode();
+            });
+        })
+
+    </script>
+
+
 </head>
 <body>
 <div class="container">
-	
+
+
+
     <form class="form-signin" method="get" action="index.html#1/2">
         <h2 class="form-signin-heading" >在线医疗管理系统</h2>
         <span id="message" class="message"> 账号或者密码有误，请重新登录 </span><br>
         <input type="text" name="username" class="input-block-level" placeholder="账号">
         <input type="password" name="password" class="input-block-level" placeholder="密码">
-        <input type="text" name="verify" class="input-medium" placeholder="验证码"> <img class="code_images"  src="Images/vlidate_code.png" /> 
+        <input type="text" name="verify" class="input-medium" placeholder="验证码"> <img class="code_images"  src="/user/code" />
 		<!--  
 			验证码功能参考：
 			https://www.cnblogs.com/jianlun/articles/5553452.html
@@ -89,6 +123,7 @@
        
         <p style="text-align: center;"><button class="btn btn-large btn-primary" style="width: 150px;" type="submit">登录</button></p>
     </form>
+
 
 </div>
 </body>
