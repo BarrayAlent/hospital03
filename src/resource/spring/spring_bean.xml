@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		                    http://www.springframework.org/schema/beans/spring-beans-4.1.xsd 
+							http://www.springframework.org/schema/context 
+							http://www.springframework.org/schema/context/spring-context-4.1.xsd 
+							http://www.springframework.org/schema/aop 
+							http://www.springframework.org/schema/aop/spring-aop-4.1.xsd 
+							http://www.springframework.org/schema/tx 
+							http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+		
+	<!--开启注解扫描驱动-->
+	<context:annotation-config></context:annotation-config>
+	<!--需要扫描的包-->
+	<!--
+		@service  当前的类是service层
+		@Resposity  dao的注解
+		@Componment  当前类交给springioc去管理
+		@Controller  放在控制层
+		@Resource  不是spring的注解，是java自带的注解，根据类型自动注入，如果找不到该类型，会按照名称去找，
+		如果还找不到就是null
+		@AutoWired  自动按照类型查找
+	-->
+	<context:component-scan base-package="com.ujiuye"/>
+
+	<!--读取c3p0的配置文件-->
+	<context:property-placeholder location="classpath:c3p0.properties"/>
+
+	<bean name="ds" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${c3p0.driverClass}"/>
+		<property name="user" value="${c3p0.user}"/>
+		<property name="password" value="${c3p0.password}"/>
+		<property name="jdbcUrl" value="${c3p0.jdbcUrl}"/>
+		<property name="maxIdleTime" value="${c3p0.maxIdleTime}"/>
+	</bean>
+
+	<!--配置spring-mybatis-->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="ds"/>
+		<!--mybatis的全局配置-->
+		<property name="configLocation" value="classpath:mybatis/mybatis_conf.xml"/>
+		<!--mapper文件-->
+		<property name="mapperLocations" value="classpath:mybatis/mapper/*.xml"/>
+	</bean>
+
+	<!--找到mapper文件对应的接口-->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.ujiuye.dao"/>
+	</bean>
+
+</beans>
