@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>优就业-线医疗管理系统</title>
+    <title>协和医院-在线医疗管理系统</title>
 	<meta charset="UTF-8">
 	<link rel="icon" href="Images/logo_favicon.ico" type="image/x-icon" />
    <link rel="stylesheet" type="text/css" href="Css/bootstrap.css" />
@@ -68,10 +68,13 @@
 			height: 35px;
 			margin-top: -15px;
 			margin-left: 10px;
+            cursor: pointer;
 		}
 		
     </style>
     <script>
+        var  code;//真实验证码
+
         //获取验证码图片
         function getnewCode() {
             //ajax
@@ -80,50 +83,71 @@
                 dataType:"json",  //后台返回的数据格式
                 success:function (da) {
                     //找到图片标签，改掉src后面图片路径
-                    // alert(da);
+                   // alert(da);
 
                     $("#code_img").prop("src","/"+da.data);
-
+                    // alert(da.code);
+                    code=da.code;
                 }
-
             })
         }
 
         //等待网页加载完成后立即加载验证码
         $(function () {
-
             getnewCode();
-
             //给图片点击事件
             $("#code_img").click(function () {
                 getnewCode();
             });
-        })
+            
+            //给登录按钮点击事件
+            $("#btn").click(function () {
+                    var inputCode=$("#verify").val();//取出输入框中输入的验证码
+                    if (code.toUpperCase()==inputCode.toUpperCase()){
+                        // alert("验证正确")
+                        $("#message").text("");
+
+                        login();
+                    }else{
+                        // alert("验证码输入有误")
+                        $("#message").text("验证码输入有误");
+                    }
+            });
+        });
+
+        //登录
+        function  login() {
+            //ajax简写
+            $.post("user/login",$("#fim").serialize(),function (data) {
+                          if (data.success){
+                             //登录成功跳转到主页
+                              location.href="index.html";
+                          }else{
+                             //登录失败
+                              $("#message").text("用户名或者密码错误");
+                          }
+            },"json");
+        }
 
     </script>
-
-
 </head>
 <body>
 <div class="container">
-
-
-
-    <form class="form-signin" method="get" action="index.html#1/2">
+	
+    <form class="form-signin" id="fim">
         <h2 class="form-signin-heading" >在线医疗管理系统</h2>
         <span id="message" class="message"> 账号或者密码有误，请重新登录 </span><br>
         <input type="text" name="username" class="input-block-level" placeholder="账号">
         <input type="password" name="password" class="input-block-level" placeholder="密码">
-        <input type="text" name="verify" class="input-medium" placeholder="验证码"> <img class="code_images"  src="/user/code" />
+        <input type="text"  id="verify" class="input-medium" placeholder="验证码"> <img id="code_img" class="code_images"  src="" />
 		<!--  
 			验证码功能参考：
 			https://www.cnblogs.com/jianlun/articles/5553452.html
 		-->
 		
        
-        <p style="text-align: center;"><button class="btn btn-large btn-primary" style="width: 150px;" type="submit">登录</button></p>
+        <p style="text-align: center;"><input id="btn"  class="btn btn-large btn-primary" style="width: 150px;" type="button" value="登录"></p>
     </form>
-
 
 </div>
 </body>
